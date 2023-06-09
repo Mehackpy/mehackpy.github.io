@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+    background-color: red;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+}
+
+small {
+    font-size: 0.8rem;
+    color: yellow;
+}
+.respuesta {
+    font-size: 3rem;
+    color: #00BFFF;
+}
+
+/* Media query para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+
+    .respuesta {
+        font-size: 2rem;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1 id="titulo">¿Quieres ser mi novia?</h1>
+    <div id="botones">
+        <button id="btnSi">Sí</button>
+        <button id="btnNo">No</button>
+    </div>
+    <p id="respuesta" class="respuesta"></p>    
+    <footer>
+        <small>Página hecha por Luis</small>
+    </footer>
+    <script>
+        document.getElementById('btnSi').addEventListener('click', function() {
+    document.getElementById('respuesta').innerText = 'Ya sabía uwu';
+});
+
+document.getElementById('btnNo').addEventListener('click', function() {
+    const btnNo = document.getElementById('btnNo');
+    const x = Math.random() * (window.innerWidth - btnNo.clientWidth);
+    const y = Math.random() * (window.innerHeight - btnNo.clientHeight);
+    btnNo.style.position = 'fixed';
+    btnNo.style.left = x + 'px';
+    btnNo.style.top = y + 'px';
+});
+
+    </script>
+</body>
+</html>
